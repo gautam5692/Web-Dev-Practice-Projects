@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  padding: 10px;
+  background: linear-gradient(to right, black, rgb(63, 63, 63));
+}
+
+h1 {
+  background: linear-gradient(to right, white, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
+  margin: 20px 30px;
+}
+
+.intro {
+  font-size: 30px;
+  font-weight: bolder;
+  background: linear-gradient(to right, white, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
+  margin: 50px 30px 0;
+}
+
+.remainings {
+  /* color: transparent; */
+  margin: 0 30px;
+  animation: remainings 0.8s linear 2s forwards;
+  opacity: 0;
+}
+
+@keyframes remainings {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.headings {
+  text-align: center;
+  margin: 40px 0 20px;
+  background: linear-gradient(to right, white, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+.bi-sub-container {
+  display: grid;
+  grid-template-columns: 30vw 30vw 30vw;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.greet,
+.learnings,
+.skills {
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.greet,
+.learnings {
+  border-right: 1px solid white;
+}
+
+.github-link {
+  text-align: center;
+  margin: 40px 0 20px;
+  background: linear-gradient(to right, white, skyblue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+.projects-sub-container {
+  display: grid;
+  grid-template-columns: 30vw 30vw 30vw;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.project-card {
+  border: 1px solid rgb(121, 120, 120);
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 120px;
+}
+
+.project-link {
+  text-decoration: none;
+  color: #5959fc;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+.project-des {
+  color: rgb(121, 120, 120);
+}
+
+.contact-container {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .bi-sub-container {
+    grid-template-columns: 30vw;
+  }
+  .greet,
+  .learnings {
+    border-right: none;
+    border-bottom: 1px solid white;
+  }
+  .projects-sub-container {
+    grid-template-columns: 90vw;
+  }
+  .contact-container > p {
+    margin-bottom: 10px;
+  }
+  p span {
+    display: block;
+  }
+}
