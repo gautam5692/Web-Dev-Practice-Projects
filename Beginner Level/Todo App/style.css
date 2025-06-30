@@ -1,0 +1,252 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.todo-app-container {
+  width: 80vw;
+  height: 80vh;
+  margin: 20px auto 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 10px;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #1e1e1e;
+}
+
+#todo-list {
+  width: 100%;
+  padding: 5px 0;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+#todo-list:hover {
+  scrollbar-color: #4caf50 #222;
+}
+
+/* Chrome, Edge, Safari */
+#todo-list:hover #todo-list::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 8px;
+  background: #222;
+}
+
+#todo-list::-webkit-scrollbar-thumb {
+  background: #4caf50;
+  border-radius: 8px;
+}
+
+#todo-list::-webkit-scrollbar-thumb:hover {
+  background: #388e3c;
+}
+
+.todo-inputs,
+.list-todo-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.list-todo-div {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+#todo-des,
+.list-todo-des {
+  width: 60%;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 5px;
+  color: #c2c2c2;
+  background-color: #343434;
+  border: 1px solid rgb(95, 95, 95);
+}
+
+#todo-date,
+.list-todo-date {
+  width: 25%;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 5px;
+  color: #c2c2c2;
+  background-color: #343434;
+  border: 1px solid rgb(95, 95, 95);
+}
+
+#todo-des:focus,
+#todo-date:focus,
+.list-todo-des:focus,
+.list-todo-date:focus {
+  outline: none;
+  box-shadow: inset 0 0 2px white;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:active {
+  transform: scale(0.8);
+}
+
+button:hover {
+  box-shadow: 0 0 5px gray;
+}
+
+#add-todo {
+  width: 10%;
+  height: 30px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.list-todobtns-div {
+  width: 10%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-todo-date,
+.list-todo-des {
+  display: flex;
+  align-items: center;
+}
+
+.del-btn {
+  width: 45%;
+  height: 30px;
+  padding: 3px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  width: 45%;
+  height: 30px;
+  padding: 3px;
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.animated-in {
+  animation: fadeInScale 0.2s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animated-out {
+  animation: fadeOutScale 0.2s ease-out;
+}
+
+@keyframes fadeOutScale {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.err-para {
+  background-color: #ff9292;
+  font-size: 25px;
+  color: red;
+  padding: 10px;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.save-btn {
+  background-color: #2196f3;
+  width: 45%;
+  height: 30px;
+  padding: 3px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.confirm-del-div {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #343434;
+  color: white;
+  height: 100px;
+  width: 40vw;
+  padding: 30px;
+  border-radius: 10px;
+  row-gap: 15px;
+}
+
+.confirm-btn-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.confirm-yes-btn,
+.confirm-no-btn {
+  width: 20%;
+  height: 30px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.confirm-yes-btn {
+  background-color: #4caf50;
+}
+
+.confirm-no-btn {
+  background-color: #f44336;
+}

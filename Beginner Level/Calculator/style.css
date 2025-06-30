@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.calc-container {
+  background: #181c20;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 32px 28px 28px 28px;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+#input {
+  width: 100%;
+  height: 56px;
+  border-radius: 10px;
+  border: none;
+  background: #23272b;
+  color: #e6e6e6;
+  font-size: 2rem;
+  text-align: right;
+  padding: 0 18px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) inset;
+  outline: 2px solid #26de81;
+}
+
+#input:focus {
+  outline: 2px solid #26de81;
+}
+
+.num-container {
+  display: grid;
+  grid-template-columns: repeat(4, 64px);
+  grid-template-rows: repeat(5, 56px);
+  gap: 14px;
+  justify-content: center;
+}
+
+.num-container button {
+  font-size: 1.35rem;
+  border: none;
+  border-radius: 8px;
+  background: #23272b;
+  color: #e6e6e6;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.08s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.num-container button:active {
+  background: #31363b;
+  transform: scale(0.97);
+}
+
+.num-container button {
+  background: #f7b731;
+  color: #23272b;
+  font-weight: 600;
+}
+
+.num-container button:active {
+  background: #e1a325;
+}
+
+.num-container #equals {
+  background: #26de81;
+  color: #181c20;
+  font-weight: 700;
+  grid-column: span 2;
+}
+
+.num-container #equals:active {
+  background: #20b86b;
+}
+
+.num-container #clr {
+  background: #eb3b5a;
+  color: #fff;
+  font-weight: 600;
+}
+
+.num-container #clr:active {
+  background: #c0392b;
+}
+.num-container #del {
+  background: #3867d6;
+  color: #fff;
+  font-weight: 600;
+  grid-column: span 2;
+}
+
+.num-container #del:active {
+  background: #274b8a;
+}
+
+#plus {
+  grid-row: span 2;
+  height: 100%;
+  align-self: stretch;
+}
