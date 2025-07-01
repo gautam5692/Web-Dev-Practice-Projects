@@ -359,11 +359,3 @@ button:hover {
     width: 35%;
   }
 }
-
-/* Large devices (laptops/desktops, 1024px and up) */
-@media (min-width: 1024px) and (max-width: 1280px) {
-}
-
-/* Extra large devices (large desktops, 1280px and up) */
-@media (min-width: 1280px) {
-}
