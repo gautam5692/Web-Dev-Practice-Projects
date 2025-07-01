@@ -76,9 +76,23 @@ h1 {
   animation: fadeInScale 0.3s ease-out;
 }
 
+.list-todo-div {
+  background-color: #3a3a3a;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.input-box,
+.list-tododesdate-container {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  row-gap: 10px;
+}
+
 #todo-des,
 .list-todo-des {
-  width: 60%;
+  width: 70%;
   height: 30px;
   padding: 0 10px;
   border-radius: 5px;
@@ -98,12 +112,18 @@ h1 {
   border: 1px solid rgb(95, 95, 95);
 }
 
-#todo-des:focus,
-#todo-date:focus,
-.list-todo-des:focus,
-.list-todo-date:focus {
+input:focus {
   outline: none;
   box-shadow: inset 0 0 2px white;
+}
+
+.no-focus {
+  cursor: auto;
+}
+
+.no-focus:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 button {
@@ -249,4 +269,101 @@ button:hover {
 
 .confirm-no-btn {
   background-color: #f44336;
+}
+
+/* Extra small devices (phones, less than 600px) */
+@media (max-width: 600px) {
+  .todo-inputs,
+  .list-todo-div {
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+  }
+
+  .input-box,
+  .list-tododesdate-container {
+    width: 100%;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  #todo-des,
+  #todo-date,
+  .list-todo-des,
+  .list-todo-date,
+  #add-todo {
+    width: 100%;
+  }
+
+  .list-todobtns-div {
+    width: 100%;
+  }
+
+  .confirm-del-div {
+    width: 60%;
+  }
+
+  .confirm-yes-btn,
+  .confirm-no-btn {
+    width: 30%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .todo-inputs,
+  .list-todo-div {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .input-box,
+  .list-tododesdate-container {
+    width: 100%;
+  }
+
+  #todo-des,
+  .list-todo-des {
+    width: 65%;
+  }
+  #todo-date,
+  .list-todo-date {
+    width: 30%;
+  }
+
+  #add-todo,
+  .list-todobtns-div {
+    width: 100%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .input-box,
+  .list-tododesdate-container {
+    width: 80%;
+  }
+
+  #add-todo,
+  .list-todobtns-div {
+    width: 15%;
+  }
+
+  #todo-des,
+  .list-todo-des {
+    width: 60%;
+  }
+  #todo-date,
+  .list-todo-date {
+    width: 35%;
+  }
+}
+
+/* Large devices (laptops/desktops, 1024px and up) */
+@media (min-width: 1024px) and (max-width: 1280px) {
+}
+
+/* Extra large devices (large desktops, 1280px and up) */
+@media (min-width: 1280px) {
 }

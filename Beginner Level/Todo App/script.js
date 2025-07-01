@@ -72,15 +72,20 @@ function displayTodoList(taskDes, taskDate, listId = Date.now().toString()) {
   list_todoDiv.classList.add("list-todo-div");
   list_todoDiv.dataset.id = listId;
 
+  const list_todoDesDate_container = document.createElement("div");
+  list_todoDesDate_container.classList.add("list-tododesdate-container");
+
   const list_todoDes = document.createElement("input");
   list_todoDes.type = "text";
   list_todoDes.readOnly = true;
   list_todoDes.classList.add("list-todo-des");
+  list_todoDes.classList.add("no-focus");
 
   const list_todoDate = document.createElement("input");
   list_todoDate.type = "date";
   list_todoDate.readOnly = true;
   list_todoDate.classList.add("list-todo-date");
+  list_todoDate.classList.add("no-focus");
 
   const list_todoBtnsDiv = document.createElement("div");
   list_todoBtnsDiv.classList.add("list-todobtns-div");
@@ -102,11 +107,13 @@ function displayTodoList(taskDes, taskDate, listId = Date.now().toString()) {
     del(list_todoDiv);
   });
 
+  list_todoDesDate_container.appendChild(list_todoDes);
+  list_todoDesDate_container.appendChild(list_todoDate);
+
   list_todoBtnsDiv.appendChild(list_todoEditBtn);
   list_todoBtnsDiv.appendChild(list_todoDelBtn);
 
-  list_todoDiv.appendChild(list_todoDes);
-  list_todoDiv.appendChild(list_todoDate);
+  list_todoDiv.appendChild(list_todoDesDate_container);
   list_todoDiv.appendChild(list_todoBtnsDiv);
   todoListDiv.appendChild(list_todoDiv);
 }
@@ -114,9 +121,10 @@ function displayTodoList(taskDes, taskDate, listId = Date.now().toString()) {
 function edit(list_todoDes, list_todoDate, list_todoEditBtn, list_todoBtnsDiv) {
   list_todoDes.readOnly = false;
   list_todoDes.focus();
+  list_todoDes.classList.remove("no-focus");
 
   list_todoDate.readOnly = false;
-  list_todoDes.focus();
+  list_todoDate.classList.remove("no-focus");
 
   const list_todoSaveBtn = document.createElement("button");
   list_todoSaveBtn.textContent = "Save";
@@ -178,17 +186,25 @@ function del(list_todoDiv) {
 
   confirmYesBtn.addEventListener("click", () => {
     confirmDelDiv.classList.add("animated-out");
-    confirmDelDiv.addEventListener("animationend", () => {
-      confirmDelDiv.remove();
-    });
-    list_todoDiv.remove();
-    saveTodo();
+    confirmDelDiv.addEventListener(
+      "animationend",
+      () => {
+        confirmDelDiv.remove();
+        list_todoDiv.remove();
+        saveTodo();
+      },
+      { once: true }
+    );
   });
 
   confirmNoBtn.addEventListener("click", () => {
     confirmDelDiv.classList.add("animated-out");
-    confirmDelDiv.addEventListener("animationend", () => {
-      confirmDelDiv.remove();
-    });
+    confirmDelDiv.addEventListener(
+      "animationend",
+      () => {
+        confirmDelDiv.remove();
+      },
+      { once: true }
+    );
   });
 }
