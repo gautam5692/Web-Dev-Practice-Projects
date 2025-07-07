@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background-color: #0a2342;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+#stopwatch-container {
+  background-color: #144272;
+  height: 80vh;
+  width: 70vw;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 50px rgba(16, 125, 172, 0.5);
+}
+
+#stopwatch {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 7vw;
+  color: #a9d6e5;
+  font-family: "Segoe UI", "Verdana", "Arial", sans-serif;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#stopwatch div {
+  display: flex;
+  flex-direction: column;
+}
+
+.units {
+  font-size: 2vw;
+  color: #74a9c1;
+  font-family: "Segoe UI", "Verdana", "Arial", sans-serif;
+}
+
+#btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 20px;
+}
+
+button {
+  cursor: pointer;
+  background-color: #107dac;
+  padding: 10px 20px;
+  color: #e1eedd;
+  border-radius: 20px;
+  border: none;
+}
+
+button:hover {
+  background-color: #0b6e99;
+}
+
+.animate-right {
+  opacity: 0;
+  animation: animateRight 0.3s ease forwards;
+}
+
+@keyframes animateRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-left {
+  opacity: 0;
+  animation: animateLeft 0.3s ease forwards;
+}
+
+@keyframes animateLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-opacity {
+  animation: animateOpacity 0.3s ease forwards;
+}
+
+@keyframes animateOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-height {
+  animation: animateHeight 0.5s ease forwards;
+}
+
+@keyframes animateHeight {
+  from {
+    height: 80vh;
+  }
+  to {
+    height: 40vh;
+  }
+}
+
+#counter-time-container {
+  background-color: #144272;
+  height: 40vh;
+  width: 70vw;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 50px rgba(16, 125, 172, 0.5);
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+#counter-time-container:hover {
+  scrollbar-color: #4ca8af transparent;
+}
+
+.counter-time {
+  color: #a9d6e5;
+  font-size: 7vw;
+  border-bottom: 1px solid rgba(16, 125, 172, 0.5);
+}

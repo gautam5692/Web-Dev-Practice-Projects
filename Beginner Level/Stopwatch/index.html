@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>Stopwatch</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <main id="main-container">
+    <div id="stopwatch-container">
+      <div id="stopwatch">
+        <div>
+          <span id="hr">00</span>
+          <span class="units">Hour</span>
+        </div> :
+        <div>
+          <span id="min">00</span>
+          <span class="units">Minute</span>
+        </div> :
+        <div>
+          <span id="sec">00</span>
+          <span class="units">Second</span>
+        </div> :
+        <div>
+          <span id="ms">00</span>
+          <span class="units">Milisecond</span>
+        </div>
+      </div>
+      <div id="btn-container">
+        <button id="start-btn">Start</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="logic.js"></script>
+</body>
+
+</html>
